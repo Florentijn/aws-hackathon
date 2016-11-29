@@ -10,14 +10,15 @@ import {colorArray} from "../../styling/index";
 import TitleContainer from '../containerComponents/titleContainer';
 import numberFormatter from '../../helper/numberFormatter';
 import type {ValueType} from '../../helper/numberFormatter';
- 
+
 
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
 
-import MssaTable from './hack-table-mssa-pure';
+import MssaTableNut from './hack-table-mssa-nutrition';
+import MssaTableCorn from './hack-table-mssa-corn';
 
 type PropType = {
     title: string
@@ -32,7 +33,7 @@ export default class TableAWS extends Component {
 
 
   state = {
-      value: "Fertiliser",
+      value: "Corn Yield",
   };
 
   handleChange = (event, index, value) => this.setState({value});
@@ -41,27 +42,38 @@ export default class TableAWS extends Component {
 
       let {title} = this.props;
 
+      let component;
+
+      if (this.state.value === "Nutrition")
+        component = (<MssaTableNut/>)
+      else
+        component = (<MssaTableCorn/>)
+
       return (
         <TitleContainer title={title}>
 
-          <MssaTable/>
+            <div style={{display: 'flex', justifyContent: 'center'}}>
+              <span style={{paddingTop: 14}}>
+                <strong>Select Variable</strong>
+              </span>
+              <SelectField
+                value={this.state.value}
+                onChange={this.handleChange}
+              >
+                  <MenuItem value={"Corn Yield"} primaryText="Crop Yield" />
+                  <MenuItem value={"Fertiliser"} primaryText="Fertiliser" />
+                  <MenuItem value={"Pesticide"} primaryText="Pesticide" />
+                  <MenuItem value={"Area Size (Hectare)"} primaryText="Area Size (Hectare)" />
+                  <MenuItem value={"Education"} primaryText="Education" />
+                  <MenuItem value={"Number of Farm Fields"} primaryText="Number of Farm Fields" />
+                  <MenuItem value={"Nutrition"} primaryText="Nutrition" />
+                  <MenuItem value={"Soil Composition"} primaryText="Soil Composition" />
+              </SelectField>
 
-          <div>
-            <SelectField
-              value={this.state.value}
-              onChange={this.handleChange}
-            >
-            <MenuItem value={"Fertiliser"} primaryText="Fertiliser" />
-            <MenuItem value={"Crop Yield"} primaryText="Crop Yield" />
-            <MenuItem value={"Pesticide"} primaryText="Pesticide" />
-            <MenuItem value={"Area Size (Hectare)"} primaryText="Area Size (Hectare)" />
-            <MenuItem value={"Education"} primaryText="Education" />
-            <MenuItem value={"Number of Farm Fields"} primaryText="Number of Farm Fields" />
-            <MenuItem value={"Nutrition"} primaryText="Nutrition" />
-            <MenuItem value={"Soil Composition"} primaryText="Soil Composition" />
+            </div>
 
-            </SelectField>
-          </div>
+            {component}
+
         </TitleContainer>
 
       )

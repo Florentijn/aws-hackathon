@@ -54,7 +54,7 @@ export default () => {
                     <div style={{flex: 2, ...styles.cellContainerHeader}}>
                         <strong>Get insights on individual variables: </strong><br/><br/>
 
-                        Select a variable, and explore the table showing key statistics.
+                        Select a variable, and explore your data and using key statistics.
                     </div>
                 </div>
                 <div style={styles.gridRowContainer}>

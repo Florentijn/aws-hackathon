@@ -46,8 +46,8 @@ const ThreeDimScatterChart = (props) => {
         <CartesianGrid />
       	<Tooltip cursor={{strokeDasharray: '3 3'}}/>
         <Legend/>
-      	<Scatter name='A school' data={data01} fill='#8884d8' shape="circle"/>
-        <Scatter name='B school' data={data02} fill='#82ca9d' />
+      	<Scatter name='GHA L06' data={data01} fill='#8884d8' shape="circle"/>
+        <Scatter name='RWA L01' data={data02} fill='#82ca9d' />
       </ScatterChart>
       </ResponsiveContainer>
       </TitleContainer>

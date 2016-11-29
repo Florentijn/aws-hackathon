@@ -31,6 +31,17 @@ export default (props: PropType) => {
 
     let {title} = props;
 
+    let x, y;
+    if (title.indexOf('X') > -1)
+    {
+        x = true;
+        y = false;
+    }
+    else {
+        x = false;
+        y = true;
+    }
+
     return (
         <TitleContainer title={title}>
             <ResponsiveContainer>
@@ -38,12 +49,12 @@ export default (props: PropType) => {
                 <Subheader>Variables</Subheader>
 
                 <ListItem
-                  leftCheckbox={<Checkbox />}
-                  primaryText="Fertiliser"
+                  leftCheckbox={<Checkbox checked={x} />}
+                  primaryText="Corn Yield"
                 />
                 <ListItem
                   leftCheckbox={<Checkbox />}
-                  primaryText="Crop Yield"
+                  primaryText="Fertiliser"
                 />
                 <ListItem
                   leftCheckbox={<Checkbox />}
@@ -62,7 +73,7 @@ export default (props: PropType) => {
                   primaryText="Nutrition"
                 />
                 <ListItem
-                  leftCheckbox={<Checkbox />}
+                  leftCheckbox={<Checkbox checked={y}/>}
                   primaryText="Soil Composition"
                 />
             </List>

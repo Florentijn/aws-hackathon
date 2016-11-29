@@ -33,7 +33,7 @@ export default (props: PropsType) => (
   <div>
     <AppBar
       style={styles.appBar}
-      title="Conservation International's Vital Signs program"
+      title="Conservation International's Vital Signs Program"
       showMenuIconButton={false}
       iconElementRight={
         <IconButton onTouchTap={props.fetchData}>
