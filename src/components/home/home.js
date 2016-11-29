@@ -10,7 +10,7 @@ import Dashboard from '../../containers/dashboard';
 import SelectionBox from '../../components/charts/hack-selection-box';
 import StatisticsTable from '../../components/charts/hack-table';
 import StackedbarChart from '../../components/charts/hack-column-chart';
-
+import ThreeDimScatterChart from '../../components/charts/hack-bubble';
 
 
 const styles = {
@@ -75,9 +75,9 @@ export default () => {
                     <div style={{flex: 1, ...styles.cellContainer}}>
                         <SelectionBox title="Select X variable bubble chart"/>
                     </div>
-                    
+
                     <div style={{flex: 2, ...styles.cellContainer}}>
-                        <StackedbarChart title="Insights"/>
+                        <ThreeDimScatterChart title="Bubble Chart"/>
                     </div>
                     <div style={{flex: 1, ...styles.cellContainer}}>
                         <SelectionBox title="Select Y variable bubble cahrt"/>
