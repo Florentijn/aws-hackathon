@@ -42,7 +42,6 @@ const ThreeDimScatterChart = (props) => {
     	<ScatterChart margin={{top: 20, right: 20, bottom: 20, left: 20}}>
       	<XAxis dataKey={'x'} name='stature' unit='cm'/>
       	<YAxis dataKey={'y'} name='weight' unit='kg'/>
-        <ZAxis dataKey={'z'} range={[60, 400]} name='score' unit='km'/>
         <CartesianGrid />
       	<Tooltip cursor={{strokeDasharray: '3 3'}}/>
         <Legend/>

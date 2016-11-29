@@ -11,6 +11,7 @@ import SelectionBox from '../../components/charts/hack-selection-box';
 import StatisticsTable from '../../components/charts/hack-table';
 import StackedbarChart from '../../components/charts/hack-column-chart';
 import ThreeDimScatterChart from '../../components/charts/hack-bubble';
+import TwoDimScatterChart from '../../components/charts/hack-scatter';
 
 
 const styles = {
@@ -34,7 +35,7 @@ const styles = {
         display: 'flex',
     },
     cellContainer: {
-        height: "360px",
+        height: "440px",
         border: "1px solid rgb(235, 235, 235)",
         margin: "-1px", //Used to offset the border
         //The "width: 0" makes sure that the charts of recharts can be used in combination with flexbox.
@@ -63,10 +64,9 @@ export default () => {
                 </div>
                 <div style={{paddingTop: 65, ...styles.gridRowContainer}}>
                     <div style={{flex: 2, ...styles.cellContainerHeader}}>
-                        <strong>Get data insights using the following simple procedure: </strong><br/><br/>
-                        Step 1: Select one or more regions below. <br/>
-                        Step 2: Select the variales that you would like to show on the screen. <br/>
-                        Step 3: Hit run, to see your first round of results. <br/>
+                        <strong>Determine correlations on a landscape level: </strong><br/><br/>
+
+                        Select the variable that you would like to use for the X and Y axis. <br/>
 
                     </div>
                 </div>
@@ -77,7 +77,7 @@ export default () => {
                     </div>
 
                     <div style={{flex: 2, ...styles.cellContainer}}>
-                        <ThreeDimScatterChart title="Bubble Chart"/>
+                        <ThreeDimScatterChart title="Bubble Chart (Landscape data points)"/>
                     </div>
                     <div style={{flex: 1, ...styles.cellContainer}}>
                         <SelectionBox title="Select Y variable bubble cahrt"/>
@@ -85,16 +85,24 @@ export default () => {
                 </div>
                 <div style={{paddingTop: 65, ...styles.gridRowContainer}}>
                     <div style={{flex: 2, ...styles.cellContainerHeader}}>
-                        <strong>Find Correlations: </strong><br/><br/>
-                        Select two variales that can be combined, and hit run. <br/>
+                        <strong>Determine correlations on a field level: </strong><br/><br/>
+
+                        Step 1: Select the variable that you would like to use for the X and Y axis. <br/>
+                        Step 2: Select a landscape. <br/>
+
                     </div>
                 </div>
                 <div style={styles.gridRowContainer}>
-                    <div style={{flex: 2, ...styles.cellContainer}}>
-                        <StackedbarChart title="Insights"/>
+
+                    <div style={{flex: 1, ...styles.cellContainer}}>
+                        <SelectionBox title="Select X variable scatter chart"/>
                     </div>
+
                     <div style={{flex: 2, ...styles.cellContainer}}>
-                        <SelectionBox title="Select variables to display"/>
+                        <TwoDimScatterChart title="Scatter Chart (Field date points)"/>
+                    </div>
+                    <div style={{flex: 1, ...styles.cellContainer}}>
+                        <SelectionBox title="Select Y variable scatter chart"/>
                     </div>
                 </div>
             </Dashboard>
