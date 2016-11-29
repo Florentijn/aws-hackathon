@@ -31,7 +31,7 @@ export default class TableAWS extends Component {
   _createData= () => {
 
       let array = [];
-      for (var i = 0; i < 7; i++) {
+      for (var i = 0; i < 5; i++) {
         array.push(<TableRow key={i}>
           <TableRowColumn>i</TableRowColumn>
           <TableRowColumn>1</TableRowColumn>

@@ -36,20 +36,34 @@ export default (props: PropType) => {
             <ResponsiveContainer>
             <List>
                 <Subheader>Variables</Subheader>
+
                 <ListItem
                   leftCheckbox={<Checkbox />}
-                  primaryText="Notifications"
-                  secondaryText="Allow notifications"
+                  primaryText="Fertiliser"
                 />
                 <ListItem
                   leftCheckbox={<Checkbox />}
-                  primaryText="Sounds"
-                  secondaryText="Hangouts message"
+                  primaryText="Crop Yield"
                 />
                 <ListItem
                   leftCheckbox={<Checkbox />}
-                  primaryText="Video sounds"
-                  secondaryText="Hangouts video call"
+                  primaryText="Pesticide"
+                />
+                <ListItem
+                  leftCheckbox={<Checkbox />}
+                  primaryText="Area Size (Hectare)"
+                />
+                <ListItem
+                  leftCheckbox={<Checkbox />}
+                  primaryText="Education"
+                />
+                <ListItem
+                  leftCheckbox={<Checkbox />}
+                  primaryText="Nutrition"
+                />
+                <ListItem
+                  leftCheckbox={<Checkbox />}
+                  primaryText="Soil Composition"
                 />
             </List>
             </ResponsiveContainer>

@@ -71,14 +71,16 @@ export default () => {
                     </div>
                 </div>
                 <div style={styles.gridRowContainer}>
-                    <div style={{flex: 1, ...styles.cellContainer}}>
 
+                    <div style={{flex: 1, ...styles.cellContainer}}>
+                        <SelectionBox title="Select X variable bubble chart"/>
                     </div>
+                    
                     <div style={{flex: 2, ...styles.cellContainer}}>
                         <StackedbarChart title="Insights"/>
                     </div>
                     <div style={{flex: 1, ...styles.cellContainer}}>
-                        <SelectionBox title="Select variables to display"/>
+                        <SelectionBox title="Select Y variable bubble cahrt"/>
                     </div>
                 </div>
                 <div style={{paddingTop: 65, ...styles.gridRowContainer}}>
