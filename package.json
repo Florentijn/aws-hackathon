@@ -8,6 +8,7 @@
     "react-test-renderer": "^15.3.2"
   },
   "dependencies": {
+    "csvtojson": "^1.0.3",
     "material-ui": "^0.16.4",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
@@ -24,6 +25,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "check": "flow check"
+    "check": "flow check",
+    "extract-ni": "node ./build/r2json/extractNutritionIndividual.js"
   }
 }
